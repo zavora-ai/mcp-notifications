@@ -1,0 +1,74 @@
+[server]
+id = "mcp_notifications"
+display_name = "Notifications"
+version = "1.0.0"
+domain = "platform-core"
+risk_level = "medium"
+writes_allowed = "gated"
+transports = ["stdio"]
+credentials = []
+
+[[tools]]
+name = "send_notification"
+description = "Send via any channel (email, sms, push, in_app, webhook, slack)"
+risk_class = "internal_write"
+
+[[tools]]
+name = "send_from_template"
+description = "Send using template with variable substitution"
+risk_class = "internal_write"
+
+[[tools]]
+name = "broadcast"
+description = "Send to multiple recipients"
+risk_class = "internal_write"
+
+[[tools]]
+name = "schedule_notification"
+description = "Schedule for future delivery"
+risk_class = "internal_write"
+
+[[tools]]
+name = "list_notifications"
+description = "List sent notifications"
+risk_class = "read_only"
+
+[[tools]]
+name = "get_status"
+description = "Get delivery status"
+risk_class = "read_only"
+
+[[tools]]
+name = "retry_notification"
+description = "Retry a failed notification"
+risk_class = "internal_write"
+
+[[tools]]
+name = "list_templates"
+description = "List notification templates"
+risk_class = "read_only"
+
+[[tools]]
+name = "get_template"
+description = "Get template details"
+risk_class = "read_only"
+
+[[tools]]
+name = "create_template"
+description = "Create a notification template"
+risk_class = "internal_write"
+
+[[tools]]
+name = "get_preferences"
+description = "Get user notification preferences"
+risk_class = "read_only"
+
+[[tools]]
+name = "update_preferences"
+description = "Update user preferences"
+risk_class = "internal_write"
+
+[[tools]]
+name = "get_delivery_stats"
+description = "Get delivery statistics"
+risk_class = "read_only"
