@@ -1,74 +1,102 @@
-[server]
-id = "mcp_notifications"
+server_id = "mcp_notifications"
 display_name = "Notifications"
 version = "1.0.0"
-domain = "platform-core"
+domain = "notifications"
+sdk_version = "0.2.0"
 risk_level = "medium"
 writes_allowed = "gated"
 transports = ["stdio"]
 credentials = []
+governance_gates = []
+environments = ["development", "staging", "production"]
 
 [[tools]]
 name = "send_notification"
-description = "Send via any channel (email, sms, push, in_app, webhook, slack)"
+description = "Send a notification via any channel (email, sms, push, in_app, webhook, slack)"
 risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "send_from_template"
-description = "Send using template with variable substitution"
+description = "Send a notification using a template with variable substitution"
 risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "broadcast"
-description = "Send to multiple recipients"
+description = "Broadcast a notification to multiple recipients"
 risk_class = "internal_write"
-
-[[tools]]
-name = "schedule_notification"
-description = "Schedule for future delivery"
-risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "list_notifications"
-description = "List sent notifications"
+description = "List sent notifications, optionally filtered by channel"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "get_status"
-description = "Get delivery status"
+description = "Get notification delivery status"
 risk_class = "read_only"
-
-[[tools]]
-name = "retry_notification"
-description = "Retry a failed notification"
-risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "list_templates"
 description = "List notification templates"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "get_template"
 description = "Get template details"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "create_template"
 description = "Create a notification template"
 risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "get_preferences"
 description = "Get user notification preferences"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "update_preferences"
-description = "Update user preferences"
+description = "Update user notification preferences"
 risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "get_delivery_stats"
-description = "Get delivery statistics"
+description = "Get delivery stats: sent, delivered, failed, bounced counts"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "schedule_notification"
+description = "Schedule a notification for future delivery"
+risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "retry_notification"
+description = "Retry a failed notification"
+risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
