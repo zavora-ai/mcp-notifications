@@ -85,7 +85,7 @@ impl NotificationServer {
     }
 }
 
-#[tool_router(server_handler)]
+#[tool_router]
 impl NotificationServer {
     #[tool(description = "Send a notification via any channel (email, sms, push, in_app, webhook, slack)")]
     async fn send_notification(&self, Parameters(input): Parameters<SendInput>) -> String {
@@ -228,4 +228,11 @@ impl NotificationServer {
             None => format!("Notification {} not found", input.id),
         }
     }
+}
+
+adk_mcp_sdk::mcp_2026_server! {
+    server: NotificationServer,
+    task_tools: [],
+    approval_tools: [],
+    cache_ttl_ms: 60_000,
 }
