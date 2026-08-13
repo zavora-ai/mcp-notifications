@@ -128,7 +128,7 @@ Queued → Sent → Delivered
 ```toml
 server_id = "mcp_notifications"
 display_name = "Notifications"
-version = "1.0.0"
+version = "1.1.0"
 domain = "platform-core"
 risk_level = "medium"
 writes_allowed = "gated"
