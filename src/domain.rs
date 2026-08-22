@@ -8,11 +8,15 @@ pub struct Notification {
     pub subject: Option<String>,
     pub body: String,
     pub status: DeliveryStatus,
+    pub delivery_path: String,
+    pub status_detail: String,
     pub template_id: Option<String>,
-    pub sent_at: String,
+    pub attempted_at: Option<String>,
+    pub delivered_at: Option<String>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
 pub enum Channel {
     Email,
     Sms,
@@ -22,13 +26,13 @@ pub enum Channel {
     Slack,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
 pub enum DeliveryStatus {
     Queued,
-    Sent,
     Delivered,
+    Suppressed,
     Failed,
-    Bounced,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

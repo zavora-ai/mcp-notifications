@@ -1,77 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 400" font-family="system-ui,-apple-system,sans-serif" font-size="13">
-  <defs>
-    <linearGradient id="nGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#f59e0b"/>
-      <stop offset="100%" style="stop-color:#fbbf24"/>
-    </linearGradient>
-  </defs>
-  <rect width="920" height="400" rx="12" fill="#0f172a"/>
-  <text x="460" y="28" text-anchor="middle" fill="#94a3b8" font-size="11">MCP NOTIFICATIONS — MULTI-CHANNEL DELIVERY</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="1100" height="560" rx="16" fill="#0f172a"/>
+  <text x="550" y="34" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="700">mcp-notifications v1.2 — truthful delivery architecture</text>
+  <text x="550" y="56" text-anchor="middle" fill="#94a3b8" font-size="12">rmcp 3.1.2 · MCP 2025-11-25 + 2026-07-28 · adk-mcp-sdk 0.3.0</text>
 
-  <!-- Clients -->
-  <rect x="20" y="110" width="130" height="160" rx="8" fill="#1e293b" stroke="#475569"/>
-  <text x="85" y="130" text-anchor="middle" fill="#94a3b8" font-size="10">MCP CLIENTS</text>
-  <rect x="30" y="142" width="110" height="20" rx="3" fill="#334155"/>
-  <text x="85" y="156" text-anchor="middle" fill="#f1f5f9" font-size="9">Claude / Kiro</text>
-  <rect x="30" y="167" width="110" height="20" rx="3" fill="#334155"/>
-  <text x="85" y="181" text-anchor="middle" fill="#f1f5f9" font-size="9">Cursor / Codex</text>
-  <rect x="30" y="192" width="110" height="20" rx="3" fill="#334155"/>
-  <text x="85" y="206" text-anchor="middle" fill="#f1f5f9" font-size="9">Windsurf</text>
+  <g fill="#1e293b" stroke="#475569">
+    <rect x="35" y="110" width="185" height="120" rx="10"/>
+    <rect x="270" y="85" width="240" height="170" rx="10"/>
+    <rect x="560" y="85" width="230" height="170" rx="10"/>
+    <rect x="840" y="85" width="225" height="170" rx="10"/>
+    <rect x="270" y="315" width="240" height="145" rx="10"/>
+    <rect x="560" y="315" width="230" height="145" rx="10"/>
+    <rect x="840" y="315" width="225" height="145" rx="10"/>
+  </g>
 
-  <line x1="150" y1="190" x2="200" y2="190" stroke="#6366f1" stroke-width="2"/>
-  <polygon points="200,185 210,190 200,195" fill="#6366f1"/>
+  <g fill="#f8fafc" font-size="14" font-weight="700">
+    <text x="128" y="140" text-anchor="middle">MCP clients</text>
+    <text x="390" y="115" text-anchor="middle">Protocol handler</text>
+    <text x="675" y="115" text-anchor="middle">Tool layer (13)</text>
+    <text x="952" y="115" text-anchor="middle">Delivery router</text>
+    <text x="390" y="345" text-anchor="middle">Policy and metadata</text>
+    <text x="675" y="345" text-anchor="middle">Attempt ledger</text>
+    <text x="952" y="345" text-anchor="middle">Status contract</text>
+  </g>
 
-  <!-- Server -->
-  <rect x="210" y="50" width="310" height="310" rx="8" fill="url(#nGrad)" opacity="0.1" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="365" y="72" text-anchor="middle" fill="#fbbf24" font-size="14" font-weight="bold">mcp-notifications</text>
-  <text x="365" y="88" text-anchor="middle" fill="#64748b" font-size="9">Rust · rmcp 1.7 · 13 tools</text>
+  <g fill="#cbd5e1" font-size="12">
+    <text x="128" y="168" text-anchor="middle">Codex · Claude · Cursor</text>
+    <text x="128" y="188" text-anchor="middle">stdio JSON-RPC</text>
 
-  <rect x="222" y="100" width="140" height="60" rx="4" fill="#1e293b"/>
-  <text x="292" y="116" text-anchor="middle" fill="#38bdf8" font-size="9">SEND (4)</text>
-  <text x="292" y="131" text-anchor="middle" fill="#64748b" font-size="8">send · from_template</text>
-  <text x="292" y="143" text-anchor="middle" fill="#64748b" font-size="8">broadcast · schedule</text>
+    <text x="390" y="143" text-anchor="middle">initialize · tools/list · tools/call</text>
+    <text x="390" y="165" text-anchor="middle">outputSchema + structuredContent</text>
+    <text x="390" y="187" text-anchor="middle">MCP Tasks for broadcast</text>
+    <text x="390" y="209" text-anchor="middle">24 h public discovery cache</text>
 
-  <rect x="368" y="100" width="140" height="60" rx="4" fill="#1e293b"/>
-  <text x="438" y="116" text-anchor="middle" fill="#34d399" font-size="9">TEMPLATES (3)</text>
-  <text x="438" y="131" text-anchor="middle" fill="#64748b" font-size="8">list · get · create</text>
-  <text x="438" y="143" text-anchor="middle" fill="#64748b" font-size="8">variable substitution</text>
+    <text x="675" y="143" text-anchor="middle">send · template · broadcast</text>
+    <text x="675" y="165" text-anchor="middle">queue · retry · tracking</text>
+    <text x="675" y="187" text-anchor="middle">templates · preferences</text>
+    <text x="675" y="209" text-anchor="middle">JSON result normalization</text>
 
-  <rect x="222" y="170" width="140" height="50" rx="4" fill="#1e293b"/>
-  <text x="292" y="186" text-anchor="middle" fill="#a78bfa" font-size="9">TRACKING (3)</text>
-  <text x="292" y="201" text-anchor="middle" fill="#64748b" font-size="8">list · status · retry</text>
+    <text x="952" y="143" text-anchor="middle">Direct HTTPS webhook / Slack</text>
+    <text x="952" y="165" text-anchor="middle">Email · SMS · push adapters</text>
+    <text x="952" y="187" text-anchor="middle">Optional bearer authentication</text>
+    <text x="952" y="209" text-anchor="middle">Local in-app queue</text>
 
-  <rect x="368" y="170" width="140" height="50" rx="4" fill="#1e293b"/>
-  <text x="438" y="186" text-anchor="middle" fill="#fb923c" font-size="9">PREFERENCES (3)</text>
-  <text x="438" y="201" text-anchor="middle" fill="#64748b" font-size="8">get · update · stats</text>
+    <text x="390" y="373" text-anchor="middle">MRTR for external delivery</text>
+    <text x="390" y="395" text-anchor="middle">risk + idempotency annotations</text>
+    <text x="390" y="417" text-anchor="middle">endpoint paths redacted</text>
 
-  <rect x="222" y="230" width="286" height="24" rx="4" fill="#1e293b"/>
-  <text x="365" y="246" text-anchor="middle" fill="#94a3b8" font-size="9">Quiet hours · Channel preferences · Delivery tracking</text>
+    <text x="675" y="373" text-anchor="middle">attempted_at · delivered_at</text>
+    <text x="675" y="395" text-anchor="middle">delivery path + HTTP outcome</text>
+    <text x="675" y="417" text-anchor="middle">retry preserves original route</text>
 
-  <!-- Channels -->
-  <rect x="560" y="80" width="320" height="240" rx="8" fill="#1e293b" stroke="#475569"/>
-  <text x="720" y="105" text-anchor="middle" fill="#94a3b8" font-size="10">DELIVERY CHANNELS</text>
+    <text x="952" y="373" text-anchor="middle" fill="#60a5fa">queued = no attempt claimed</text>
+    <text x="952" y="395" text-anchor="middle" fill="#34d399">delivered = endpoint returned 2xx</text>
+    <text x="952" y="417" text-anchor="middle" fill="#fbbf24">suppressed = preference / quiet hours</text>
+    <text x="952" y="439" text-anchor="middle" fill="#f87171">failed = missing path or delivery error</text>
+  </g>
 
-  <rect x="580" y="120" width="130" height="24" rx="12" fill="#334155" stroke="#38bdf8"/>
-  <text x="645" y="136" text-anchor="middle" fill="#38bdf8" font-size="9">📧 Email</text>
-  <rect x="720" y="120" width="130" height="24" rx="12" fill="#334155" stroke="#34d399"/>
-  <text x="785" y="136" text-anchor="middle" fill="#34d399" font-size="9">📱 SMS</text>
-
-  <rect x="580" y="155" width="130" height="24" rx="12" fill="#334155" stroke="#fbbf24"/>
-  <text x="645" y="171" text-anchor="middle" fill="#fbbf24" font-size="9">🔔 Push</text>
-  <rect x="720" y="155" width="130" height="24" rx="12" fill="#334155" stroke="#a78bfa"/>
-  <text x="785" y="171" text-anchor="middle" fill="#a78bfa" font-size="9">💬 In-App</text>
-
-  <rect x="580" y="190" width="130" height="24" rx="12" fill="#334155" stroke="#fb923c"/>
-  <text x="645" y="206" text-anchor="middle" fill="#fb923c" font-size="9">🔗 Webhook</text>
-  <rect x="720" y="190" width="130" height="24" rx="12" fill="#334155" stroke="#f87171"/>
-  <text x="785" y="206" text-anchor="middle" fill="#f87171" font-size="9">💼 Slack</text>
-
-  <!-- Templates -->
-  <rect x="580" y="230" width="270" height="70" rx="4" fill="#0f172a" stroke="#475569"/>
-  <text x="715" y="248" text-anchor="middle" fill="#94a3b8" font-size="9">TEMPLATES</text>
-  <text x="715" y="264" text-anchor="middle" fill="#64748b" font-size="8">Welcome Email · OTP SMS · System Alert</text>
-  <text x="715" y="278" text-anchor="middle" fill="#64748b" font-size="8">Variables: {{name}}, {{code}}, {{title}}</text>
-  <text x="715" y="292" text-anchor="middle" fill="#64748b" font-size="8">Delivery: Queued → Sent → Delivered</text>
-
-  <text x="460" y="385" text-anchor="middle" fill="#475569" font-size="10">mcp-notifications v1.0.0 · 13 tools · 6 channels · Templates · Preferences · Delivery tracking</text>
+  <g stroke="#38bdf8" stroke-width="2" fill="none">
+    <path d="M220 170 H270"/><path d="M510 170 H560"/><path d="M790 170 H840"/>
+    <path d="M390 255 V315"/><path d="M675 255 V315"/><path d="M952 255 V315"/>
+    <path d="M510 387 H560"/><path d="M790 387 H840"/>
+  </g>
+  <text x="550" y="525" text-anchor="middle" fill="#64748b" font-size="12">No provider configured → structured failure. The server never fabricates Sent or Delivered.</text>
 </svg>

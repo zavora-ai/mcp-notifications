@@ -1,39 +1,39 @@
 server_id = "mcp_notifications"
 display_name = "Notifications"
-version = "1.1.0"
+version = "1.2.0"
 domain = "notifications"
-sdk_version = "0.2.0"
+sdk_version = "0.3.0"
 risk_level = "medium"
 writes_allowed = "gated"
 transports = ["stdio"]
-credentials = []
-governance_gates = []
+credentials = ["MCP_NOTIFICATIONS_BEARER_TOKEN"]
+governance_gates = ["mrtr_approval"]
 environments = ["development", "staging", "production"]
 
 [[tools]]
 name = "send_notification"
-description = "Send a notification via any channel (email, sms, push, in_app, webhook, slack)"
-risk_class = "internal_write"
-requires_approval = false
+description = "Attempt real delivery; report delivered only after an endpoint accepts the request"
+risk_class = "external_write"
+requires_approval = true
 credential_bindings = []
 
 [[tools]]
 name = "send_from_template"
 description = "Send a notification using a template with variable substitution"
-risk_class = "internal_write"
-requires_approval = false
+risk_class = "external_write"
+requires_approval = true
 credential_bindings = []
 
 [[tools]]
 name = "broadcast"
 description = "Broadcast a notification to multiple recipients"
-risk_class = "internal_write"
-requires_approval = false
+risk_class = "external_write"
+requires_approval = true
 credential_bindings = []
 
 [[tools]]
 name = "list_notifications"
-description = "List sent notifications, optionally filtered by channel"
+description = "List recorded delivery attempts, optionally filtered by channel"
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
@@ -82,14 +82,14 @@ credential_bindings = []
 
 [[tools]]
 name = "get_delivery_stats"
-description = "Get delivery stats: sent, delivered, failed, bounced counts"
+description = "Get truthful queued, delivered, suppressed, and failed delivery counts"
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "schedule_notification"
-description = "Schedule a notification for future delivery"
+description = "Queue a notification record; no scheduler or delivery is claimed"
 risk_class = "internal_write"
 requires_approval = false
 credential_bindings = []
@@ -97,6 +97,6 @@ credential_bindings = []
 [[tools]]
 name = "retry_notification"
 description = "Retry a failed notification"
-risk_class = "internal_write"
-requires_approval = false
+risk_class = "external_write"
+requires_approval = true
 credential_bindings = []

@@ -1,6 +1,6 @@
 [package]
 name = "mcp-notifications"
-version = "1.1.0"
+version = "1.2.0"
 edition = "2024"
 rust-version = "1.94.1"
 authors = ["James Karanja <james.karanja@zavora.ai>"]
@@ -13,8 +13,8 @@ categories = ["development-tools"]
 readme = "README.md"
 
 [dependencies]
-adk-mcp-sdk = { version = "0.2.0", git = "https://github.com/zavora-ai/adk-mcp-sdk.git", rev = "4dac4301441a8a51a042fd66cc1798f0ec3e3f55" }
-rmcp = { version = "3.1.2", features = ["server", "transport-io", "macros"] }
+adk-mcp-sdk = { version = "0.3.0", git = "https://github.com/zavora-ai/adk-mcp-sdk.git", rev = "2c977a0cfac265fa5bec6a2c154def8f3d1e4959" }
+rmcp = { version = "=3.1.2", features = ["server", "transport-io", "macros"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 tokio = { version = "1", features = ["full"] }
@@ -24,5 +24,7 @@ tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 schemars = "1"
 chrono = { version = "0.4", features = ["serde"] }
 uuid = { version = "1", features = ["v4"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+url = "2"
 
 [workspace]
